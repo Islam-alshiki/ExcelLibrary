@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using ExcelLibrary.NetStandred;
 
 namespace ExcelLibrary.Tests
 {
@@ -24,12 +25,17 @@ namespace ExcelLibrary.Tests
             this.column = sheet.Column(2);
         }
 
+        private string Replace(string old)
+        {
+            return old.Replace(",", ".");
+        }
+
         [TestMethod]
         [TestCategory("NumberFormats")]
         public void General()
         {
             Cell cell = this.column.Cell(1);
-            string val = cell.Value.Replace(".", ",");
+            string val = Replace(cell.Value);
             decimal number = decimal.Parse(val);
             Assert.AreEqual(123.45m, number);
         }
@@ -39,7 +45,7 @@ namespace ExcelLibrary.Tests
         public void Number()
         {
             Cell cell = this.column.Cell(2);
-            string val = cell.Value.Replace(".", ",");
+            string val = Replace(cell.Value);
             decimal number = decimal.Parse(val);
             Assert.AreEqual(123.45m, number);
         }
@@ -49,7 +55,7 @@ namespace ExcelLibrary.Tests
         public void Currency()
         {
             Cell cell = this.column.Cell(3);
-            string val = cell.Value.Replace(".", ",");
+            string val = Replace(cell.Value);
             decimal number = decimal.Parse(val);
             Assert.AreEqual(123.45m, number);
         }
@@ -59,7 +65,7 @@ namespace ExcelLibrary.Tests
         public void Accounting()
         {
             Cell cell = this.column.Cell(4);
-            string val = cell.Value.Replace(".", ",");
+            string val = Replace(cell.Value);
             decimal number = decimal.Parse(val);
             Assert.AreEqual(123.45m, number);
         }

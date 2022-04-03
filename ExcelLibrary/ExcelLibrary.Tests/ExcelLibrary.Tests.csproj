@@ -61,9 +61,9 @@
     <None Include="Input\test2.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExcelLibrary\ExcelLibrary.csproj">
-      <Project>{cd544247-a373-46d7-b923-574ce23fa3e9}</Project>
-      <Name>ExcelLibrary</Name>
+    <ProjectReference Include="..\ExcelLibrary.NetStandred\ExcelLibrary.NetStandred.csproj">
+      <Project>{cb7ddc69-b947-40ad-8b32-b703d1b2ee69}</Project>
+      <Name>ExcelLibrary.NetStandred</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
